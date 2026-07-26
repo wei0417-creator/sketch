@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>好棒的秋涼澎湖望安慢活寫生雙日遊｜綠蠵龜生態 × 花宅寫生 × 獨木舟體驗</title>
+  <style>
+    :root {
+      --primary-color: #0288d1;
+      --secondary-color: #00897b;
+      --accent-color: #f57c00;
+      --bg-color: #f4f7f6;
+      --card-bg: #ffffff;
+      --text-color: #2c3e50;
+      --border-color: #e0e0e0;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      line-height: 1.6;
+    }
+
+    /* Banner 區域：背景.jpg */
+    .hero-banner {
+      background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)), url('./背景.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px 80px 20px;
+      position: relative;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .hero-banner h1 {
+      font-size: 2.8rem;
+      margin: 0 0 10px 0;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+      letter-spacing: 2px;
+    }
+
+    .hero-banner p {
+      font-size: 1.3rem;
+      margin: 0;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+      font-weight: 300;
+    }
+
+    /* 置頂導覽列 */
+    nav {
+      background: rgba(255, 255, 255, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      backdrop-filter: blur(5px);
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav li a {
+      display: block;
+      padding: 15px 25px;
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    nav li a:hover {
+      color: var(--primary-color);
+      background-color: #e1f5fe;
+    }
+
+    /* 版面容器 */
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 35px;
+      margin-bottom: 35px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      border-bottom: 3px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 6px;
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
+
+    /* 特色亮點區域網格 */
+    .art-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      align-items: stretch;
+    }
+
+    .art-card {
+      background: #fafafa;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .art-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* 圖片與影片共同視覺樣式 */
+    .art-card img, 
+    .art-card video {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+    }
+
+    .art-card h3 {
+      color: var(--secondary-color);
+      margin: 10px 0;
+    }
+
+    /* 新增：影音藝廊 Gallery 專用樣式 */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      background: #f9f9f9;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border: 1px solid var(--border-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .gallery-item img, 
+    .gallery-item video {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-caption {
+      padding: 12px 15px;
+      background: #ffffff;
+      text-align: left;
+    }
+
+    .gallery-caption h4 {
+      margin: 0 0 5px 0;
+      color: var(--primary-color);
+      font-size: 1.05rem;
+    }
+
+    .gallery-caption p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: #666;
+    }
+
+    /* 行程表時間軸 */
+    .timeline {
+      border-left: 4px solid var(--secondary-color);
+      padding-left: 25px;
+      margin-left: 10px;
+    }
+
+    .day-title {
+      font-weight: bold;
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      margin-top: 20px;
+      margin-bottom: 15px;
+    }
+
+    .event {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .event::before {
+      content: '';
+      position: absolute;
+      left: -33px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      background-color: var(--accent-color);
+      border-radius: 50%;
+    }
+
+    .event-time {
+      font-weight: bold;
+      color: var(--secondary-color);
+    }
+
+    /* 費用表格 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--primary-color);
+      color: white;
+      font-size: 1rem;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    tr:hover {
+      background-color: #e1f5fe;
+    }
+
+    td {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    /* 表單樣式 */
+    form label {
+      display: block;
+      margin-top: 18px;
+      font-weight: bold;
+      color: var(--text-color);
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    form input:focus, form select:focus, form textarea:focus {
+      border-color: var(--primary-color);
+      outline: none;
+    }
+
+    button {
+      margin-top: 25px;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #e65100;
+      transform: translateY(-2px);
+    }
+
+    #status-msg {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: var(--text-color);
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner 主圖區 -->
+  <header class="hero-banner">
+    <h1>澎湖望安慢活 2天1夜 深度生態人文之旅</h1>
+    <p>綠蠵龜生態解密 × 花宅聚落寫生 × 網垵口獨木舟體驗</p>
+  </header>
+
+  <!-- 頁面導覽列 -->
+  <nav>
+    <ul>
+      <li><a href="#intro">體驗特色</a></li>
+      <li><a href="#gallery">望安影音藝廊</a></li>
+      <li><a href="#art">寫生與生態</a></li>
+      <li><a href="#itinerary">行程規劃</a></li>
+      <li><a href="#pricing">費用說明</a></li>
+      <li><a href="#signup">線上報名</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    
+    <!-- 體驗三大亮點 -->
+    <section id="intro" class="card">
+      <h2>體驗三大亮點</h2>
+      <div class="art-section">
+        
+        <!-- 1. 綠蠵龜生態 -->
+        <div class="art-card">
+          <img src="./st.gif" alt="綠蠵龜幼龜動態展示">
+          <h3>🐢 綠蠵龜生態解密</h3>
+          <p>由澎湖望安綠蠵龜觀光保育中心專業講師帶領，觀察小綠蠵龜可愛姿態，深入了解海洋保育與產卵沙灘的故事。</p>
+        </div>
+
+        <!-- 2. 花宅寫生 -->
+        <div class="art-card">
+          <img src="./oh.png" alt="望安花宅古厝風光">
+          <h3>🎨 望安花宅寫生</h3>
+          <p>穿梭於保存完整的百年閩南古厝聚落，親手拿起畫筆記錄玄武岩與珊瑚礁石交織的時光痕跡。</p>
+        </div>
+
+        <!-- 3. 獨木舟體驗 -->
+        <div class="art-card">
+          <video src="./DM.mp4" autoplay loop muted playsinline controlslist="nodownload"></video>
+          <h3>🚣‍♀️ 網垵口獨木舟</h3>
+          <p>划向湛藍的網垵口海域，體驗親海樂趣，以低碳划行方式感受望安島嶼海岸線的平靜與美麗。</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ★ 新增：望安影音藝廊專區 ★ -->
+    <section id="gallery" class="card">
+      <h2>望安印象：影音與精彩紀實</h2>
+      <p>點擊影片可播放聲音，帶您提前感受望安島的蔚藍大海、夕陽絕景與綠蠵龜的可愛姿態。</p>
+      
+      <div class="gallery-grid">
+
+        <!-- 藝廊 1：綠蠵龜游泳影片 -->
+        <div class="gallery-item">
+          <video src="./st.mp4" controls playsinline poster="./center.jpg"></video>
+          <div class="gallery-caption">
+            <h4>🐢 保育中心綠蠵龜悠游實錄</h4>
+            <p>記錄保育池內綠蠵龜優雅划水與互動的可愛畫面。</p>
+          </div>
+        </div>
+
+        <!-- 藝廊 2：天台山夕陽 -->
+        <div class="gallery-item">
+          <img src="./51643_0.jpg" alt="望安天台山夕陽">
+          <div class="gallery-caption">
+            <h4>🌅 天台山夕照絕景</h4>
+            <p>登臨望安最高峰天台山，遠眺花嶼、貓嶼及一望無際的海天夕陽。</p>
+          </div>
+        </div>
+
+        <!-- 藝廊 3：網垵口獨木舟親海 -->
+        <div class="gallery-item">
+          <img src="./mimi.jpg" alt="望安國小獨木舟體驗">
+          <div class="gallery-caption">
+            <h4>🚣‍♀️ 雙人獨木舟體驗</h4>
+            <p>在清澈湛藍的望安海域划行，享受離島專屬的平靜與波光。</p>
+          </div>
+        </div>
+
+        <!-- 藝廊 4：綠蠵龜觀光保育中心外觀 -->
+        <div class="gallery-item">
+          <img src="./wangan_center.png" alt="澎湖望安綠蠵龜觀光保育中心">
+          <div class="gallery-caption">
+            <h4>🏛️ 綠蠵龜觀光保育中心</h4>
+            <p>望安著名的綠蠵龜造型展館，也是島上生態導覽的重要基地。</p>
+          </div>
+        </div>
+
+        <!-- 藝廊 5：星空講堂 -->
+        <div class="gallery-item">
+          <img src="./star.png" alt="望安夜間星空導覽">
+          <div class="gallery-caption">
+            <h4>✨ 離島無光害夜間星空</h4>
+            <p>夜間聽完生態講座後，漫步沙灘仰望滿天繁星與銀河。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 寫生與生態手稿展示區 -->
+    <section id="art" class="card">
+      <h2>花宅寫生與綠蠵龜生態手稿展示</h2>
+      <p>活動中我們將引導大家觀察綠蠵龜的姿態與外觀結構，並透過手繪寫生將望安的海洋意象留存於畫紙上：</p>
+      <div class="art-section">
+        <div class="art-card">
+          <img src="./綠蠵龜手稿.jpg" alt="綠蠵龜手稿" style="height: auto;">
+          <h3>綠蠵龜線稿打樣</h3>
+          <p>於望安綠蠵龜保育中心現場觀察採集，透過細緻線條勾勒龜甲與身體構造。</p>
+        </div>
+        <div class="art-card">
+          <img src="./綠蠵龜手劃.jpg" alt="綠蠵龜手劃彩繪" style="height: auto;">
+          <h3>水彩寫生創作</h3>
+          <p>結合望安花宅寫生氛圍，用優美的水彩暈染出綠蠵龜於海洋中游動的生命色彩。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 行程介紹 -->
+    <section id="itinerary" class="card">
+      <h2>行程規劃 (2天1夜)</h2>
+      
+<p class="day-title">Day 0：夜航高雄馬公澎湖輪</p>
+      <div class="timeline">
+        <div class="event"><span class="event-time">22:00 - 22:10</span> 鼓山渡輪站22:00集合</div>
+        <div class="event"><span class="event-time">23:30 - 06:30</span> 高雄出航往馬公出發</div>
+        <div class="event"><span class="event-time">09:00 - 09:30</span> 南海候船室前往望安</div>
+        </div>
+      
+<p class="day-title">Day 1：聚落人文與星空龜途</p>
+      <div class="timeline">
+        <div class="event"><span class="event-time">10:30 - 11:00</span> 望安潭門港集合、辦理房間入住與機車牽引</div>
+        <div class="event"><span class="event-time">14:00 - 16:00</span> 【慢尋寫生創作靈感】古厝漫步、騎機車環島、白砂灘戲水網美照</div>
+        <div class="event"><span class="event-time">16:00 - 18:00</span> 【海上獨木舟漫遊】</div>
+        <div class="event"><span class="event-time">19:00 - 19:45</span> 【晚餐】在地美食佳餚</div>
+        <div class="event"><span class="event-time">20:00 - 22:00</span> 【綠蠵龜生態講座】夜間保育導覽與海洋星空</div>
+      </div>
+
+      <p class="day-title" style="margin-top: 30px;">Day 2：島上回憶寫生與離島島風</p>
+      <div class="timeline">
+        <div class="event"><span class="event-time">06:30 - 07:00</span> 活力在地早餐時間</div>
+        <div class="event"><span class="event-time">09:30 - 11:30</span> 【島嶼寫生】自由創作時間</div>
+        <div class="event"><span class="event-time">12:00 - 13:30</span> 午餐饗宴</div>
+        <div class="event"><span class="event-time">14:00 ~</span> 賦歸（搭船前往馬公或返航）</div>
+      </div>
+    </section>
+
+    <!-- 費用資訊 -->
+    <section id="pricing" class="card">
+      <h2>活動費用說明</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>方案類型</th>
+            <th>費用 (TWD)</th>
+            <th>費用包含內容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>熟齡票</strong> (65歲以上)</td>
+            <td><strong>$3,600</strong> / 人</td>
+            <td>澎湖輪往返船票、機車共乘(兩人一台)、綠蠵龜館宿舍、保險、講師、第一天晚餐與第二天午餐。</td>
+          </tr>
+          <tr>
+            <td><strong>一般票</strong> (65歲以下)</td>
+            <td><strong>$4,500</strong> / 人</td>
+            <td>包含所有體驗費用與餐食、澎湖輪往返船票、機車共乘(兩人一台)、綠蠵龜館宿舍、保險、講師、第一天晚餐與第二天午餐。。</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size: 0.85rem; color: #666; margin-top: 12px;">* 費用以澎湖輪經濟艙交通船票及綠蠵龜館宿舍做為計算（可協助代訂合作民宿）。</p>
+    </section>
+
+    <!-- 報名表單 -->
+    <section id="signup" class="card">
+      <h2>線上報名表單</h2>
+      <form id="signup-form">
+        <label for="name">主要聯絡人姓名 *</label>
+        <input type="text" id="name" name="name" required placeholder="請輸入姓名">
+
+        <label for="phone">聯絡電話 *</label>
+        <input type="tel" id="phone" name="phone" required placeholder="0912-345678">
+
+        <label for="email">電子郵件 *</label>
+        <input type="email" id="email" name="email" required placeholder="example@email.com">
+
+        <label for="date">預計參加梯次 *</label>
+        <select id="date" name="date" required>
+          <option value="">-- 請選擇梯次 --</option>
+                  <option value="2026-10-09">2026/10/10 (六) - 10/11 (日)</option>
+        </select>
+
+        <label for="count">報名總人數 *</label>
+        <input type="number" id="count" name="count" min="1" max="10" value="1" required>
+
+        <label for="note">備註需求 (如素食、加訂民宿等)</label>
+        <textarea id="note" name="note" rows="3" placeholder="請填寫特別需求或同行者資訊..."></textarea>
+
+        <button type="submit" id="submit-btn">確認送出報名</button>
+      </form>
+      <div id="status-msg"></div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>© 2026 澎湖望安綠蠵龜生態與花宅寫生體驗版權所有</p>
+  </footer>
+
+  <script>
+    // ⚠️ 請將此處替換為您部署好的 Google Apps Script Web App 網址
+    const GAS_WEB_APP_URL = "YOUR_GAS_WEB_APP_URL_HERE";
+
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submit-btn');
+      const statusMsg = document.getElementById('status-msg');
+      
+      if (GAS_WEB_APP_URL === "YOUR_GAS_WEB_APP_URL_HERE") {
+        alert("請先將 JavaScript 中的 GAS_WEB_APP_URL 替換為您部署好的 Google Apps Script 網址！");
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = "資料傳送中...";
+      statusMsg.innerText = "";
+
+      const formData = new FormData(this);
+
+      fetch(GAS_WEB_APP_URL, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if(data.result === 'success') {
+          statusMsg.style.color = "green";
+          statusMsg.innerText = "🎉 報名成功！我們已收到您的資料，會儘快與您聯繫確認細節。";
+          document.getElementById('signup-form').reset();
+        } else {
+          throw new Error(data.message || '未知錯誤');
+        }
+      })
+      .catch(error => {
+        statusMsg.style.color = "red";
+        statusMsg.innerText = "❌ 送出失敗，請稍後再試或直接聯繫我們。";
+        console.error('Error!', error.message);
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "確認送出報名";
+      });
+    });
+  </script>
+</body>
+</html>
