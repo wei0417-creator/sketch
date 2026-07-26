@@ -150,7 +150,7 @@
       margin: 10px 0;
     }
 
-    /* 新增：影音藝廊 Gallery 專用樣式 */
+    /* 影音藝廊 Gallery 專用樣式 */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -266,6 +266,34 @@
       border-bottom: 1px solid var(--border-color);
     }
 
+    /* 匯款資訊卡片專用樣式 */
+    .bank-card {
+      background: #eef7f6;
+      border: 1px dashed var(--secondary-color);
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin-top: 25px;
+    }
+
+    .bank-card h3 {
+      margin-top: 0;
+      color: var(--secondary-color);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bank-info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .bank-info-list li {
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
     /* 表單樣式 */
     form label {
       display: block;
@@ -313,6 +341,7 @@
       font-weight: bold;
       text-align: center;
       font-size: 1.1rem;
+      line-height: 1.8;
     }
 
     footer {
@@ -339,7 +368,7 @@
       <li><a href="#gallery">望安影音藝廊</a></li>
       <li><a href="#art">寫生與生態</a></li>
       <li><a href="#itinerary">行程規劃</a></li>
-      <li><a href="#pricing">費用說明</a></li>
+      <li><a href="#pricing">費用與匯款資訊</a></li>
       <li><a href="#signup">線上報名</a></li>
     </ul>
   </nav>
@@ -375,7 +404,7 @@
       </div>
     </section>
 
-    <!-- ★ 新增：望安影音藝廊專區 ★ -->
+    <!-- 望安影音藝廊專區 -->
     <section id="gallery" class="card">
       <h2>望安印象：影音與精彩紀實</h2>
       <p>點擊影片可播放聲音，帶您提前感受望安島的蔚藍大海、夕陽絕景與綠蠵龜的可愛姿態。</p>
@@ -452,14 +481,14 @@
     <section id="itinerary" class="card">
       <h2>行程規劃 (2天1夜)</h2>
       
-<p class="day-title">Day 0：夜航高雄馬公澎湖輪</p>
+      <p class="day-title">Day 0：夜航高雄馬公澎湖輪</p>
       <div class="timeline">
         <div class="event"><span class="event-time">22:00 - 22:10</span> 鼓山渡輪站22:00集合</div>
         <div class="event"><span class="event-time">23:30 - 06:30</span> 高雄出航往馬公出發</div>
         <div class="event"><span class="event-time">09:00 - 09:30</span> 南海候船室前往望安</div>
-        </div>
+      </div>
       
-<p class="day-title">Day 1：聚落人文與星空龜途</p>
+      <p class="day-title">Day 1：聚落人文與星空龜途</p>
       <div class="timeline">
         <div class="event"><span class="event-time">10:30 - 11:00</span> 望安潭門港集合、辦理房間入住與機車牽引</div>
         <div class="event"><span class="event-time">14:00 - 16:00</span> 【慢尋寫生創作靈感】古厝漫步、騎機車環島、白砂灘戲水網美照</div>
@@ -477,7 +506,7 @@
       </div>
     </section>
 
-    <!-- 費用資訊 -->
+    <!-- 費用資訊與匯款說明 -->
     <section id="pricing" class="card">
       <h2>活動費用說明</h2>
       <table>
@@ -497,11 +526,26 @@
           <tr>
             <td><strong>一般票</strong> (65歲以下)</td>
             <td><strong>$4,500</strong> / 人</td>
-            <td>包含所有體驗費用與餐食、澎湖輪往返船票、機車共乘(兩人一台)、綠蠵龜館宿舍、保險、講師、第一天晚餐與第二天午餐。。</td>
+            <td>包含所有體驗費用與餐食、澎湖輪往返船票、機車共乘(兩人一台)、綠蠵龜館宿舍、保險、講師、第一天晚餐與第二天午餐。</td>
           </tr>
         </tbody>
       </table>
       <p style="font-size: 0.85rem; color: #666; margin-top: 12px;">* 費用以澎湖輪經濟艙交通船票及綠蠵龜館宿舍做為計算（可協助代訂合作民宿）。</p>
+
+      <!-- 匯款帳號卡片 -->
+      <div class="bank-card">
+        <h3>🏦 銀行匯款資訊</h3>
+        <ul class="bank-info-list">
+          <li><strong>匯款銀行：</strong>台灣中小企業銀行（總分支機構代號：050-8517）[cite: 2]</li>
+          <li><strong>開戶分行：</strong>北高雄分行[cite: 2]</li>
+          <li><strong>戶名：</strong>費特寧斯有限公司[cite: 2]</li>
+          <li><strong>存款種類：</strong>活期存款[cite: 2]</li>
+          <li><strong>匯款帳號：</strong><span style="font-size: 1.2rem; color: var(--accent-color); font-weight: bold;">851-12-075106</span>[cite: 2]</li>
+        </ul>
+        <p style="font-size: 0.88rem; color: #555; margin-top: 10px; margin-bottom: 0;">
+          💡 填寫報名表單後，請於 3 天內完成匯款，並可於表單「備註欄」註記帳號後五碼以利核對[cite: 2]。
+        </p>
+      </div>
     </section>
 
     <!-- 報名表單 -->
@@ -520,14 +564,14 @@
         <label for="date">預計參加梯次 *</label>
         <select id="date" name="date" required>
           <option value="">-- 請選擇梯次 --</option>
-                  <option value="2026-10-09">2026/10/10 (六) - 10/11 (日)</option>
+          <option value="2026-10-09">2026/10/10 (六) - 10/11 (日)</option>
         </select>
 
         <label for="count">報名總人數 *</label>
         <input type="number" id="count" name="count" min="1" max="10" value="1" required>
 
-        <label for="note">備註需求 (如素食、加訂民宿等)</label>
-        <textarea id="note" name="note" rows="3" placeholder="請填寫特別需求或同行者資訊..."></textarea>
+        <label for="note">備註需求 (如素食、加訂民宿、匯款帳號末五碼等)</label>
+        <textarea id="note" name="note" rows="3" placeholder="請填寫特別需求、同行者資訊或匯款帳號末五碼..."></textarea>
 
         <button type="submit" id="submit-btn">確認送出報名</button>
       </form>
@@ -537,12 +581,12 @@
   </div>
 
   <footer>
-    <p>© 2026 澎湖望安綠蠵龜生態與花宅寫生體驗版權所有</p>
+    <p>© 2026 費特寧斯有限公司 ｜ 澎湖望安綠蠵龜生態與花宅寫生體驗 版權所有[cite: 2]</p>
   </footer>
 
   <script>
     // ⚠️ 請將此處替換為您部署好的 Google Apps Script Web App 網址
-    const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwSr4G0bgjuaH2PuzXDTv8aB9liqCEJ8AJHBcIKakvEUlZcKW8PihbGIG9IJW1pVtvsbw/exec";
+    const GAS_WEB_APP_URL = "YOUR_GAS_WEB_APP_URL_HERE";
 
     document.getElementById('signup-form').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -569,7 +613,7 @@
       .then(data => {
         if(data.result === 'success') {
           statusMsg.style.color = "green";
-          statusMsg.innerText = "🎉 報名成功！我們已收到您的資料，會儘快與您聯繫確認細節。";
+          statusMsg.innerHTML = "🎉 <strong>報名成功！</strong>我們已收到您的資料。<br>請完成匯款至 <strong>台灣中小企業銀行 (050) 帳號：851-12-075106 (戶名: 費特寧斯有限公司)</strong>，專人將儘快與您聯繫確認細節！[cite: 2]";
           document.getElementById('signup-form').reset();
         } else {
           throw new Error(data.message || '未知錯誤');
