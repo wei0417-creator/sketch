@@ -150,6 +150,32 @@
       margin: 10px 0;
     }
 
+    /* 寫生影片專用區塊 */
+    .art-video-box {
+      margin-top: 30px;
+      text-align: center;
+      background: #fdfdfd;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .art-video-box h3 {
+      color: var(--secondary-color);
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .art-video-box video {
+      max-width: 100%;
+      max-height: 520px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      margin-top: 10px;
+    }
+
     /* 影音藝廊 Gallery 專用樣式 */
     .gallery-grid {
       display: grid;
@@ -459,10 +485,11 @@
       </div>
     </section>
 
-    <!-- 寫生與生態手稿展示區 -->
+    <!-- 花宅寫生與綠蠵龜生態手稿展示區 -->
     <section id="art" class="card">
       <h2>花宅寫生與綠蠵龜生態手稿展示</h2>
       <p>活動中我們將引導大家觀察綠蠵龜的姿態與外觀結構，並透過手繪寫生將望安的海洋意象留存於畫紙上：</p>
+      
       <div class="art-section">
         <div class="art-card">
           <img src="./綠蠵龜手稿.jpg" alt="綠蠵龜手稿" style="height: auto;">
@@ -475,6 +502,14 @@
           <p>結合望安花宅寫生氛圍，用優美的水彩暈染出綠蠵龜於海洋中游動的生命色彩。</p>
         </div>
       </div>
+
+      <!-- ★ 新增：海龜寫生現場創作影片 ★ -->
+      <div class="art-video-box">
+        <h3>🎬 現場繪製實錄：望安的綠蠵龜寫生</h3>
+        <p style="font-size: 0.95rem; color: #666; margin-bottom: 15px;">從細緻打樣到色彩暈染，紀錄將望安綠蠵龜定格於畫紙上的靈動過程。</p>
+        <video src="./turtle_draw.mp4" controls playsinline poster="./綠蠵龜手劃.jpg"></video>
+      </div>
+
     </section>
 
     <!-- 行程介紹 -->
